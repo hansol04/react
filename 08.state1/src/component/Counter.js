@@ -11,11 +11,12 @@ const Counter = () => {
             > 업데이트 함수를 호출하면 현재의 상태값을 변경할 수 있음
     */
     const [count, setCount] = useState(1);
+    
     return (
         <>
             <h1>{count}</h1>
-            <button onclick={() => {setCount(count+1)}}>+</button><br/>
-            <button onclick={() => {setCount(count-1)}}>-</button><br/>
+            <button onclick={() => {setCount(count+1)}}>+</button> &emsp;
+            <button onclick={() => {setCount(count-1)}}>-</button>
         </>
     )
 }

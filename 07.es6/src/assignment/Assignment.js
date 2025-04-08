@@ -26,6 +26,7 @@ function Assign() {
     console.log(`x4=${x4}`);
 
     // 배열보다 더 많은 변수가 있을 때
+    
     const [x5, , , n5] = points;
     console.log(`x5=${x5}, n5=${n5}`);
 

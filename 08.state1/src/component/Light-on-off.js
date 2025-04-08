@@ -7,7 +7,7 @@ const LightOnOff = () => {
     return (
         <>
             { light ? <h1 style={{color:'hotpink'}}>전구ON</h1> : <h1 style={{color:'gray'}}>전구OFF</h1>}
-            <button onclick={() => {setLight(!light)}}>
+            <button onClick={()=>{setLight(!light)}}>
                 {light ? "끄기" : "켜기"}
             </button>
         </>
