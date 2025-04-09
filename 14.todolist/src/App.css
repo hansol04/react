@@ -1,0 +1,96 @@
+.App {
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.Header h3{
+  background-color: rgb(15, 15, 143);
+  color: white;
+  padding: 25px;
+  font-size: 40px;
+  margin-bottom: 1px;
+}
+
+.Header h2{
+  background-color: rgb(18, 64, 216);
+  color: white;
+  padding: 10px;
+  margin-bottom: auto;
+  font-size: 20px;
+}
+
+.Editor {
+  background-color: ivory;
+  text-align: center;
+  height: 100px;
+}
+
+.Editor input {
+  padding: 9px;
+  width: 300px;
+  font-size: 15px;
+  border: 1px solid #ddd;
+}
+
+.Editor button {
+  padding: 4px 10px;
+  font-size: 15px;
+  background-color: lightgray;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.Editor button:hover {
+  background-color: gray;
+}
+
+.List {
+  background-color: ivory;
+  font-weight: bold;
+  color: rgb(235, 2, 41);
+}
+
+.List h4 {
+  font-size: 40px;
+  color: rgb(235, 2, 41);
+  margin-bottom: 10px;
+}
+
+.List input[type="text"] {
+  padding: 10px;
+  width: 60%;
+  margin-bottom: 10px;
+  font-size: 15px;
+  border: 1px solid #ddd;
+}
+
+.todos_wrapper {
+  flex-direction: column;
+}
+
+.Todoitem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: ivory;
+  padding: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.Todoitem input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.Todoitem button {
+  background-color: lightgray;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.Todoitem button:hover {
+  background-color: gray;
+}
