@@ -12,16 +12,15 @@ const TodoItem = (props) => {
 }
 */
 
-const TodoItem = ({isDone, content, date}) => {
+const TodoItem = ({id, isDone, content, date, onUpdate, onDelete}) => {
     return (
         <div className='Todoitem'>
-            <input type='checkbox' />
+            <input type='checkbox' checked={isDone} onChange={() => {onUpdate(id)}}/>
             <span>{content}</span>
             <span>{new Date(date).toLocaleDateString}</span>
-            <button>DEL</button>
+            <button onClick={() => {onDelete(id)}}>DEL</button>
         </div>
     )
 }
-
 
 export default TodoItem;
