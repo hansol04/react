@@ -38,37 +38,36 @@ function App() {
       <Routes>
         <Route path='/' element={
           <>
-            <div className='main-bg' />
+            <div className='main-bg'/>     
             <Container>
               <Row>
                 {
                   clothes.map((v, i) => {
-                    return (
-                      <PListCol clothes={v} key={i} />
-                    )
+                      return (
+                        <PListCol clothes={v} key={i}/>
+                      )
                   })
                 }
               </Row>
             </Container>
           </>
         }/>
-          <Route path='/detail' element={<Detail/>}/>
-          <Route path='/cart' element={<Cart/>}/>
+        <Route path='/detail' element={<Detail/>} />
+        <Route path='/cart' element={<Cart/>} />
       </Routes>
     </div>
   );
 }
-      
+
 function PListCol(props) {
-      return (
-        <>
-          <Col>
-            <img src = {`${process.env.PUBLIC_URL}/img/clothes${props.clothes.id}.png`} width="100%" />
-            <h4>{props.clothes.title}</h4>
-            <p>{props.clothes.price}</p>
-          </Col>
-        </>
-      )
-    }
-    
+  return (
+    <>
+      <Col>
+        <img src = {`${process.env.PUBLIC_URL}/img/clothes${props.clothes.id}.png`} width="100%"/>
+        <h4>{props.clothes.title}</h4>
+        <p>{props.clothes.price}</p>
+      </Col>
+    </>
+  )
+}
 export default App;

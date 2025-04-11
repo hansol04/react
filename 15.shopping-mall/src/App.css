@@ -23,3 +23,13 @@
 .detail_text {
   color: rgb(77, 77, 77);
 }
+
+/* 애니메이션 주기 */
+.start {
+  opacity: 0;
+}
+
+.end {
+  opacity: 1;
+  transition: opacity 0.5s;
+}

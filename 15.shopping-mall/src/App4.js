@@ -8,21 +8,16 @@ import Cart from './pages/Cart';
 import Detail from './pages/Detail';
 import axios from 'axios';
 /*
-    * SPA의 단점
-      - 컴포넌트간의 STATE공유 어려움
+    * axios (ajax 사용하기)
+    : fetch() 사용할 수 있음. json의 형태로 자동 변경
 
-    * 공유저장 공간 사용
-      1. Context Api : 기본 탑재되어 있음
-         잘 안쓰는 이유 : 성능 이슈(하나만 변해도 하위의 모든 것들을 재랜더링)
-                         재사용이 어렵다
-      2. Redux : 외부 라이브러리
-         주로 사용
+        > 문서 : https://axios-http.com/kr/docs/intro
+          1. 설치부터 시작
 */
 
 function App() {
   const [clothes, setClothes] = useState(pList);
   const [clickCount, setClickCount] = useState(2);
-
   let navigate = useNavigate();
 
   return (
@@ -54,7 +49,7 @@ function App() {
               </Row>
             </Container>
 
-            <Button variant="outline-secondary" onClick={() => {
+            <Button variant="outline-warning" onClick={() => {
               axios.get(`https://raw.githubusercontent.com/professorjiwon/data/refs/heads/main/data${clickCount}.json`)
                    .then((result) => {
                       console.log(result);
@@ -87,7 +82,7 @@ function PListCol({clothes}) {
 
   return (
     <Col md={4} onClick={goDetail}>
-      <img src = {`${process.env.PUBLIC_URL}/img/clothes${clothes.id}.png`} width="80%"/>
+      <img src = {`${process.env.PUBLIC_URL}/img/clothes${clothes.id}.png`} width="100%"/>
       <h4>{clothes.title}</h4>
       <p>{clothes.price}</p>
     </Col>

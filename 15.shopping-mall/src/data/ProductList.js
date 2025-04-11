@@ -19,7 +19,7 @@ const pList = [
       price : '9,070,000'
     },{
       id : 3,
-      title : 'BRACELET',
+      title : 'CUFF',
       content : 'Made in the Prance',
       price : '2,048,000'
     },
