@@ -3,10 +3,11 @@
     align-items: center;
     padding: 20px 0;
     border-bottom: 1px solid lightgray;
+    font-weight: bolder;
 }
 
 .header_center {
-    width: 50%;
+    width: 47%;
     justify-content: center;
 }
 

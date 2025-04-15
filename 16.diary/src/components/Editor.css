@@ -1,0 +1,11 @@
+.Editor {
+    text-align: left;
+    padding-left: 10px;
+}
+.editor_btn {
+    justify-content: space-evenly;
+}
+
+.emotion_list {
+    display: flex;
+}
