@@ -37,7 +37,7 @@ function App() {
   let u = JSON.parse(storageUser)
   console.log(u.name)
 
-  // 최근에 본 상품 보여주기
+  // 문. 최근에 본 상품 보여주기
   useEffect(() => {
     if(!localStorage.getItem('recentProduct')) {
       localStorage.setItem('recentProduct', JSON.stringify([]))

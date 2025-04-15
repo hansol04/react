@@ -1,46 +1,7 @@
 import { configureStore, createSlice } from '@reduxjs/toolkit';
+import user from './userSlice'
 
-/*
-// 1. createSlice를 만든다
-let user = createSlice({
-    name : 'user',
-    initialState : 'kim',
-    reducers : {
-        changeName(state) {
-            return 'jiwon ' + state
-        }
-    }
-})
-export let {changeName} = user.actions
-*/
 
-/*
-// 객체일 때(array일 때)
-let user = createSlice({
-    name : 'user',
-    initialState : {name:'kim', age: 23},
-    reducers : {
-        changeName(state) {
-            return {name:'park', age: 25}
-        }
-    }
-})
-export let {changeName} = user.actions
-*/
-
-// 직접 변경 가능
-let user = createSlice({
-    name : 'user',
-    initialState : {name:'kim', age: 23},
-    reducers : {
-        changeName(state) {
-            state.name = 'park'
-        },
-        ageUpdate(state) {
-            state.age += 1
-        }
-    }
-})
 export let {changeName, ageUpdate} = user.actions
 
 let stock = createSlice({
@@ -50,11 +11,23 @@ let stock = createSlice({
 
 let cart = createSlice({
     name : 'cart',
-    initialState : [
-        {id:1, name:'EARRING',  count:2},
-        {id:3, name:'CUFF',  count:1}
-    ]
+    initialState : [],
+    reducers : {
+        countIncrese(state, action) {
+            let i = state.findIndex(a => a.id == action.payload)
+            state[i].count++
+        },
+        addItem(state, action) {
+            let p = state.find(item => item.id == action.payload.id)
+            if(p) {
+                p.count++;
+            } else {
+            state.push(action.payload)
+            } 
+        }
+    }
 })
+export let { countIncrese, addItem } = cart.actions
 
 export default configureStore({
     reducer: {

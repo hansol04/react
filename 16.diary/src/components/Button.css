@@ -1,0 +1,15 @@
+.button {
+    background-color: lightgray;
+    border-radius: 5px;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+}
+.button_green {
+    background-color: darkolivegreen;
+    color: ivory;
+}
+.button_red {
+    background-color: palevioletred;
+    color: ivory;
+}

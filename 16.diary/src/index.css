@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Gaegu&display=swap');
+
+body {
+  font-family: "Gaegu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
+}
+
+html, body {
+  margin: 0;
+  width: 100%;
+  background-color: rgb(253, 244, 211);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+

@@ -1,8 +1,22 @@
 import { useEffect, useState } from 'react';
-import {Button, Nav} from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { Button, Nav, Table } from 'react-bootstrap';
+import { useParams, useNavigate } from 'react-router-dom';
+import { addItem } from '../store/store';
+import { useDispatch } from 'react-redux';
 
 function Detail(props) {
+
+    useEffect (() => {
+        let p = localStorage.getItem('recentProduct')   // localStorage 가져오기
+        p = JSON.parse(p)   // 배열로 형변환
+        
+        if(!p.includes(findId.id))
+            p.push(findId.id)  // 배열에 넣기
+            localStorage.setItem('recentProduct', JSON.stringify(p))    // localStorage 넣기
+    }, [])
+
+    let dispatch = useDispatch()
+    const nav = useNavigate()
 
     let {pid} = useParams();
 
@@ -35,7 +49,11 @@ function Detail(props) {
                     <h4>{findId.title}</h4>
                     <p>{findId.content}</p>
                     <p>{findId.price}원</p>
-                    <Button variant="outline-info">주문하기</Button>
+                    <Button variant="outline-secondary" onClick={() => {
+                        dispatch(addItem({id:findId.id, name:findId.title, count:1}))
+                        nav('/cart')
+                    }}>
+                        주문하기</Button>
                 </div>
             </div>
 
@@ -52,6 +70,41 @@ function Detail(props) {
             </Nav>
 
             <TabContent tab = {tab} />
+            <RecentViewed clothes={props.clothes} />
+        </div>
+    )
+}
+
+function RecentViewed ({clothes}) {
+    const [recent, setRecent] = useState([]);
+
+    useEffect (() => {
+        let viewed = JSON.parse(localStorage.getItem('recentProduct')) || []
+
+        let products = viewed.map(id => clothes.find(c => c.id == id))
+
+        setRecent(products);
+
+    }, [clothes])
+    return (
+        <div>
+            <h4>👀최근 본 상품👀</h4>
+            <Table striped bordered hover>
+                <tr>
+                    <th>이름</th>
+                    <th>제품설명</th>
+                    <th>가격</th>
+                </tr>
+                {
+                    recent.map((item) => 
+                        <tr>
+                            <td>{item.title}</td>
+                            <td>{item.content}</td>
+                            <td>{item.price}</td>
+                        </tr>
+                    )
+                }
+            </Table>
         </div>
     )
 }
