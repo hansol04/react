@@ -1,0 +1,35 @@
+.App {
+  text-align: center;
+}
+
+.main-bg {
+  width: auto;
+  height: 680px;
+  background-image: url("./img/main_bg.png");
+  /* background-image: url("./img/clothes1.png");
+     background-image: url("../public/img/main_bg.png"); */
+
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-bottom: 50px;
+  }
+
+.detail_img {
+  margin-bottom: 50px;
+  margin-top: 100px;
+}
+
+.detail_text {
+  color: rgb(77, 77, 77);
+}
+
+/* 애니메이션 주기 */
+.start {
+  opacity: 0;
+}
+
+.end {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
